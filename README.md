@@ -1,3 +1,3 @@
 # CPPTestRunner
 
-`npm i @tangerie/cpptestrunner`
+`npm i -g @tangerie/cpptestrunner`

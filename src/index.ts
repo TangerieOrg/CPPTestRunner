@@ -1,8 +1,25 @@
 #! /usr/bin/env node
 
-import { program } from "commander";
+import { actions } from "./actions";
+import { program } from "./options";
+import { ActionState, TestOptions } from "./types";
+import { runCommand, runTest } from "./util";
 
-program.parse(process.argv);
+program.action(async (executables : string[], opts : TestOptions) => {
+    let state : ActionState = {
+        originalDir: "",
+        executables,
+        opts,
+        testModules: {}
+    }
 
-const opts = program.opts();
-console.log(opts);
+    for(const a of actions) { 
+        const next = await (a(state));
+        if(next != undefined) state = next
+    }
+
+    executables = state.executables;
+    opts = state.opts;
+})
+
+program.parse();
