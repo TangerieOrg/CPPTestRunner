@@ -21,5 +21,5 @@ program.action(async (executables : string[], opts : TestOptions) => {
     executables = state.executables;
     opts = state.opts;
 })
-
+// -d example -t tests -m asan msan
 program.parse();
