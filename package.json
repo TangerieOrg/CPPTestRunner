@@ -10,12 +10,15 @@
       "default": "./lib/index.modern.js"
     }
   },
+  "bin": {
+    "cpptestrunner": "lib/index.js"
+  },
   "main": "./lib/index.js",
   "module": "./lib/index.module.js",
   "umd": "./lib/index.umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "start": "ts-node cli/cli.ts",
+    "start": "ts-node src/index.ts",
     "build": "microbundle --target node",
     "watch": "microbundle watch --target node",
     "validate": "tsc --noEmit",
@@ -36,6 +39,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "commander": "^12.0.0",
     "lodash": "^4.17.21"
   }
 }

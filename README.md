@@ -1,3 +1,3 @@
-# Dexcom.js
+# CPPTestRunner
 
-`npm i @tangerie/dexcom.js`
+`npm i @tangerie/cpptestrunner`
