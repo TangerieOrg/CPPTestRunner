@@ -1,0 +1,41 @@
+{
+  "name": "@tangerie/cpptestrunner",
+  "version": "0.0.1",
+  "description": "",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "default": "./lib/index.modern.js"
+    }
+  },
+  "main": "./lib/index.js",
+  "module": "./lib/index.module.js",
+  "umd": "./lib/index.umd.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "start": "ts-node cli/cli.ts",
+    "build": "microbundle --target node",
+    "watch": "microbundle watch --target node",
+    "validate": "tsc --noEmit",
+    "prepare": "npm run build",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "author": "Tangerie <josh.cavill01@gmail.com> (https://github.com/Tangerie)",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.11.19",
+    "microbundle": "^0.15.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
